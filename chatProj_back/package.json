@@ -1,0 +1,25 @@
+{
+  "name": "chatProj",
+  "version": "1.0.0",
+  "description": "1. 백엔드 세팅 : DB세팅, 웹소켓 세팅\r 2. 프론트엔드 세팅 : 웹소켓 세팅",
+  "main": "index.js",
+  "scripts": {
+    
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "http": "0.0.1-security",
+    "https": "^1.0.0",
+    "mongodb": "^6.2.0",
+    "mongoose": "^8.0.0",
+    "nodemon": "^3.0.1",
+    "nvm": "0.0.4",
+    "socket.io": "^4.7.2"
+  }
+}
