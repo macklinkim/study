@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "User must type name"],
-    unique: true,
+    unique: false,
   },
   token:{
     type: String,
@@ -12,6 +12,10 @@ const userSchema = new mongoose.Schema({
   online:{
     type: Boolean,
     default: false,
+  },
+  room: {
+    type : mongoose.Schema.ObjectId,
+    ref: "Room",
   },
 });
 module.exports = mongoose.model("User", userSchema);
