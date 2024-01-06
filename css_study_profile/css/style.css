@@ -1,0 +1,167 @@
+body,
+h1,
+h2,
+p,
+ul {
+  margin: unset;
+}
+
+h1,
+h2,
+ul {
+  font-size: unset;
+  font-weight: unset;
+}
+
+p,
+h2:hover {
+  animation-duration: 3s;
+  animation-name: rainbowLink;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbowLink {
+  0% {
+    color: #ff2a2a;
+  }
+
+  15% {
+    color: #ff7a2a;
+  }
+
+  30% {
+    color: #ffc52a;
+  }
+
+  45% {
+    color: #43ff2a;
+  }
+
+  60% {
+    color: #2a89ff;
+  }
+
+  75% {
+    color: #202082;
+  }
+
+  90% {
+    color: #6b2aff;
+  }
+
+  100% {
+    color: #e82aff;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: unset;
+}
+
+body {
+  background: url(../images/calculator-background-9idet8pma9adeqd5.jpg);
+  margin: 0 auto;
+}
+
+.wrapper {
+  background: white;
+  width: 800px;
+  margin: 60px auto;
+}
+
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/computer.avif) no-repeat;
+  text-align: center;
+  color: white;
+  padding: 60px;
+}
+
+img.profile {
+  border-radius: 40% / 15%;
+  border: 7px solid;
+  width: 120px;
+}
+
+h1.name {
+  font-size: 80px;
+  font-weight: 700;
+}
+
+p {
+  border-top: 4px solid;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 20px;
+  letter-spacing: 4px;
+  line-height: 10px;
+}
+
+.contents {
+  background-color: silver;
+  padding: 20px;
+}
+
+.section+.section {
+  margin-top: 20px;
+}
+
+.section {
+  background-color: white;
+  padding: 20px;
+  background-image: url(../images/infographic_black_white.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 30px center;
+  background-origin: content-box;
+  transition: all .3s;
+}
+
+.section:hover {
+  background-image: url(../images/infographic.png);
+}
+
+.section.skills {
+  background-image: url(../images/analytics_black_white.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  transition: all .3s;
+}
+
+.skills:hover {
+  background-image: url(../images/analytics.png);
+}
+
+.section h2 {
+  font-size: 27px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.list li {
+  font-size: 20px;
+  padding-left: 6px;
+  padding-bottom: 5px;
+  border-left: 4px solid silver;
+  color: dimgray;
+  width: fit-content;
+  transition: all .3s;
+}
+
+.list li:hover {
+  border-color: black;
+  color: black;
+  letter-spacing: .3px;
+  border-width: 3px;
+  font-weight: 700;
+}
+
+.footer {
+  background-color: #f6f6f6;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 10px;
+}
