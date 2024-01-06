@@ -1,0 +1,124 @@
+:root {
+	font-family: 'arial';
+}
+body, div, ul, li {
+  margin: unset;
+  padding: unset;
+}
+li {
+  list-style-type: none;
+}
+h1, h2, p{
+  font-size: unset;
+  font-weight: unset;
+  margin: unset;
+}
+img {
+  vertical-align: top;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+body {
+  background-image: url(images/bg.png);
+}
+.container {
+  width: 800px;
+  margin: 50px auto;
+  display: flex;
+}
+
+.sidebar {
+  background-image: url(images/profile-bg.png);
+  background-repeat: no-repeat;
+  background-color: gray;
+  flex-basis: 200px;
+  flex-shrink: 0;
+  background-size: contain;
+}
+
+.sidebar .profile {
+  border-radius: 50%;
+  border: 4px solid white;
+  display: block;
+  margin: 0 auto 15% auto;
+
+}
+
+.sidebar .gnb {
+  margin: 0 0 5px 5px;
+  color: silver;
+  background-color: #222;
+}
+
+.sidebar .gnb li{
+  transition: all 0.5s;
+  display: block;
+}
+
+.sidebar .gnb li a{
+  padding: 10px;
+  display: block;
+  transition: all .4s;
+}
+
+.sidebar .gnb li:hover a{
+  background-color: lightslategray;
+}
+
+.main {
+  flex-basis: auto;
+  flex-grow: 1;
+  padding: 40px;
+  background-color: white;
+  background-image: url(images/trophy.png);
+  background-size: 148px 132px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-origin: content-box;
+}
+
+.main h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: darkblue;
+  margin-bottom: 20px;
+  line-height: 0.9;
+}
+
+.main p {
+  line-height: 1.56;
+  color : gray;
+  margin-bottom: 24px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions a{
+  background-color: gray;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-image: url(images/sprite-btn.png);
+
+}
+
+.actions a:hover{
+  background-color: silver;
+}
+
+.actions a.type_view {
+  background-position: left top;
+}
+.actions a.type_like {
+  background-position: center top;
+}
+.actions a.type_share {
+  background-position: right top;
+}
