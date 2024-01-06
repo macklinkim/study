@@ -1,0 +1,172 @@
+/* unset */
+body,
+div,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: unset;
+  padding: unset;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: unset;
+  color: unset;
+}
+
+/* typography */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* layer */
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.l_wrapper {
+  max-width: 1200px;
+}
+
+/* css */
+body {
+  background-color: black;
+}
+
+.cover {
+  max-width: 1200px;
+  aspect-ratio: 16/9;
+  background-image: url(images/cover.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  height: 240px;
+}
+
+.contents {
+  margin-top: -100px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detail {
+  padding: 0 100px 60px 60px;
+  max-width: 740px;
+}
+
+.detail::before {
+  padding: 4px 12px;
+  background: #FF2E00;
+  border-radius: 8px;
+  content: 'new';
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.title {
+  color: white;
+  font-size: 64px;
+  font-weight: 700;
+  padding-bottom: 18px;
+}
+
+.desc {
+  color: #999999;
+  font-size: 16px;
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.info {
+  box-sizing: border-box;
+  padding: 20px 60px 0 0;
+  color: #555;
+  width: 280px;
+}
+
+.info-lists {}
+
+.list {}
+
+.list-name {
+  color: white;
+}
+
+.ganre {
+  display: flex;
+  gap: 2px;
+  row-gap: 3px;
+  flex-wrap: wrap;
+}
+
+.ganre-a {
+  background: #555;
+  border-radius: 12px;
+  color: #AAAAAA;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  padding: 2px 5px;
+}
+
+.ratings {
+  display: flex;
+  height: 48px;
+}
+
+.rating.stars {
+  background-image: url(images/star.png);
+  background-size: 500% 200%;
+  background-position: left bottom;
+  overflow: hidden;
+  width: 100%;
+}
+
+.rating.none {
+  background-image: url(images/star.png);
+  background-position: left top;
+  background-size: 500% 200%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.circles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cast-img {
+  width: 48px;
+  height: 48px;
+  margin-right: -12px;
+  border-radius: 50%;
+  border: 4px solid black;
+}
+
+@media (max-width: 1240px) {
+  .info {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}

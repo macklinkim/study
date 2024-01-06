@@ -1,0 +1,294 @@
+:root {
+  --color-primary: #e28bb1;
+  --color-primary-light: #e2a7c5;
+  --color-primary-dark: #b2829b;
+  --color-green: #5f976b;
+  --color-gray: #daddbe;
+  --color-blue: #39609d;
+}
+
+:root.red-eyes {
+  --color-blue: red;
+  --color-green: #eee;
+}
+:root.pigeon {
+  --color-primary: gray;
+  --color-primary-light: lightgray;
+  --color-primary-dark : #666;
+  --color-darkgray: rgb(42, 36, 36);
+}
+/* component */
+body {
+  background-color: #222;
+}
+
+img {
+  min-width: 100%;
+}
+
+@keyframes fly {
+  0% {
+    transform: scale(0.95) rotateY(0);
+  }
+
+  100% {
+    transform: scale(1.05) rotateY(180deg);
+    padding: 10px;
+  }
+}
+
+@keyframes itsbbultime {
+  100% {
+    background-position-x: 10px;
+  }
+}
+
+@keyframes blinks {
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes flys {
+  0% {
+    transform: translate(-185px,-159px);
+}
+33% {
+    transform: translate(300px, -100px);
+}
+66% {
+    transform: translate(-185px,-159px);
+}
+100% {
+    transform: translate(300px,250px);
+}
+}
+
+.monster {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 3s;
+}
+
+:root.jumps .monster {
+  transition: all 1s;
+  transform: translate(-50%, -80%);
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+
+:root.moving .monster{
+  animation-name: flys;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+.monster-head {
+  background-color: var(--color-primary-light);
+  width: 100px;
+  height: 100px;
+  border-radius: 50px 50px 20px 20px;
+  margin: 0 auto;
+  transform: translate(0, 30%);
+}
+
+.monster-body {
+  background-color: var(--color-primary);
+  width: 200px;
+  height: 200px;
+  border-radius: 40px 40px 20px 20px;
+  position: relative;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.monster-body::before {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10%;
+  margin: 20px auto;
+  width: 120px;
+  height: 120px;
+  background-color: white;
+  border-radius: 20px 20px 30px 30px;
+}
+
+:root.body-s1 .monster-body {
+  background-color: lightsalmon;
+}
+
+:root.legs .monster-body{
+  height: 200px;
+  border-bottom: 15px solid var(--color-primary-dark);
+}
+
+:root.legs .monster-body::after {
+  content:  ' ';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  height: 30px;
+  background-color: rgb(213, 174, 17);
+  transform-origin: left bottom;
+  clip-path: polygon(23% 0%, 23% 43%, 5% 58%, 13% 81%, 31% 80%, 34% 50%, 34% 0%, 49% 0%, 59% 0%, 61% 45%, 59% 72%, 64% 86%, 85% 84%, 92% 68%, 88% 50%, 75% 43%, 69% 24%, 68% 11%, 68% 4%, 69% 0%);
+}
+
+.bbuls {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -26px;
+}
+
+
+.bbuls-item {
+  width: 30px;
+  height: 50px;
+  background-color: var(--color-green);
+  background-image: linear-gradient(90deg,
+      /* 그라디언트 각도 */
+      var(--color-green) 50%,
+      /* 첫 번째 색상 시작 및 끝 */
+      rgb(0 0 0 / .2) 50%,
+      /* 두 번째 색상 시작 및 끝 */
+      var(--color-green) 50%,
+      /* 첫 번째 색상 시작 및 끝 */
+      rgb(0 0 0 / .2) 50%
+      /* 두 번째 색상 시작 및 끝 */
+    );
+  background-size: 10px 10px;
+  border-radius: 0 0 4px 20px;
+  animation-name: itsbbultime;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+:root.bbuls-s1 .bbuls-item {
+  background-color: lightsalmon;
+  background-image: linear-gradient(90deg,
+  var(--color-primary) 50%,
+  rgb(0 0 0 / .2) 50%,
+  var(--color-green) 50%,
+  rgb(0 0 0 / .2) 50%
+  );
+
+}
+
+.bbuls-item::before {
+  content: ' ';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #222;
+  border-radius: 0 0 0 20px;
+}
+
+.bbuls-item.type_right {
+  transform: rotateY(180deg);
+}
+
+.eyes {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: -14px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.eye {
+  background-color: var(--color-blue);
+  width: 30px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 5px var(--color-gray);
+  position: relative;
+
+  animation-name: blinks;
+  animation-duration: .5s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-delay: 2s;
+}
+
+.eye:nth-child(2) {
+  margin-top: -10px;
+}
+
+.eye::after {
+  content: ' ';
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 4px;
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.mouth {
+  border: 4px solid var(--color-primary);
+  border-bottom: 10px solid rgb(255 0 0/.5);
+  background-color: lightcoral;
+  height: 20px;
+  border-radius: 10px 10px;
+  width: 30px;
+  margin: 0 auto;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  
+}
+
+:root.pigeon .mouth{
+  background-color: var(--color-darkgray);
+  clip-path: polygon(20% 0, 80% 0, 50% 100%);
+}
+
+.wing {
+  position: absolute;
+  margin-top: 40px;
+  top: 0;
+  width: 60px;
+  height: 130px;
+  background-color: var(--color-primary-light);
+  transform: rotateY(0);
+  border-bottom: 10px solid rgb(0 0 0 / .3);
+  transition: transform .4s;
+  animation-name: fly;
+  animation-duration: .6s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-delay: .4s;
+  animation-play-state: running;
+}
+
+:root.moving .wing{
+  animation-duration: .2s;
+}
+
+.wing.type-left {
+  left: 0;
+  border-radius: 0 70px 0 60px;
+  transform-origin: left top;
+}
+
+.wing.type-right {
+  right: 0;
+  border-radius: 70px 0 60px 0;
+  transform-origin: right top;
+}

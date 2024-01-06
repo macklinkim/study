@@ -1,0 +1,246 @@
+/* Resets */
+body, p {
+    margin: unset;
+}
+
+h1, h2 {
+    font-size: unset;
+    margin: unset;
+    font-weight: unset;
+}
+
+a {
+    color: unset;
+    text-decoration: unset;
+}
+
+strong {
+    font-weight: unset;
+}
+
+img {
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Layouts */
+.l_wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Variables */
+:root {
+
+    --color-red: orangered;
+
+    --color-white: #fff;
+
+    --color-gray-20: #aaa;
+
+    --color-gray-30: #999;
+
+
+    --color-gray-80: #222;
+    --color-gray-90: #111;
+
+    --font-ko: 'Noto Sans KR', 'arial', sans-serif; 
+    --font-en: 'arial', sans-serif;
+}
+
+/* Typography */
+:root {
+    font-family: var(--font-ko);
+    word-break: keep-all;
+}
+
+/* Components */
+body {
+    background-color: var(--color-gray-80); 
+}
+
+.main {
+    padding: 60px 0;
+}
+
+.poster {
+    background-color: var(--color-gray-90); 
+    color: var(--color-gray-30);
+    position: relative;
+    z-index: 1;
+}
+
+.poster-cover {
+    position: relative;
+    margin-bottom: -180px;
+    z-index: -1;
+    aspect-ratio: 16/9;
+}
+
+.poster-cover::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(0deg, #111 0%, rgba(17, 17, 17, 0.00) 81.45%);
+    height: 240px;
+}
+
+.poster-cover-src {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.poster-title {
+    font-family: var(--font-en);
+    color: var(--color-white);
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.poster-title strong.type_badge {
+    background-color: var(--color-red);
+    display: block;
+    width: fit-content;
+    font-size: 12px; 
+    padding: 0 12px;
+    height: 28px;
+    line-height: 27px;
+    border-radius: 8px;
+    letter-spacing: 0.18em;
+    text-indent: 0.18em;
+}
+
+.poster-main {
+    padding: 60px;
+    display: flex;
+    gap: 60px;
+    min-height: 400px;
+}
+
+.poster-contents {
+    width: 700px;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.poster-contents p {
+    margin: 1.6em 0;
+    max-width: 700px;
+    overflow-wrap: break-word;
+    /* word-wrap */
+}
+
+.poster-sidebar {
+    width: 320px;
+}
+
+.section {
+    font-family: var(--font-en);
+    margin: 40px auto;
+    width: 240px;
+}
+
+.section-title {
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.section-contents {
+}
+
+.tag {
+    background-color: var(--color-gray-80);
+    color: var(--color-gray-20);
+
+    margin: 2px 0;
+
+    height: 22px;
+    line-height: 22px;
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 14px;
+    border-radius: 12px;
+}
+
+.ratings {
+    width: 240px;
+    overflow: hidden;
+}
+
+.ratings,
+.ratings::before {
+    background-image: url(images/happy.png);
+    background-size: 240px 96px;
+    height: 48px;
+}
+
+.ratings::before {
+    content: ' ';
+    background-position: left bottom;
+    width: 0;
+    display: block;
+    transition: .4s;
+}
+
+.ratings.type_1::before { width: 20%; }
+.ratings.type_2::before { width: 40%; }
+.ratings.type_3::before { width: 60%; }
+.ratings.type_4::before { width: 80%; }
+.ratings.type_5::before { width: 100%; }
+
+/*
+추가 연구 
+.ratings::before {
+    content: ' ';
+    background-position: left bottom;
+    width: var(--score); CSS varables의 사용 
+    display: block;
+    transition: .4s;
+}
+
+ data custom attribute의 사용
+.ratings[data-score="1"]::before { width: 20%; }
+.ratings[data-score="2"]::before { width: 40%; }
+.ratings[data-score="3"]::before { width: 60%; }
+.ratings[data-score="4"]::before { width: 80%; }
+.ratings[data-score="5"]::before { width: 100%; }
+*/
+
+.circle {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+}
+
+.circle-icon {
+    width: 64px;
+    border-radius: 50%;
+    border: 4px solid var(--color-gray-90);
+    box-sizing: border-box;
+    margin-right: -14px;
+}
+
+@media ( max-width: 960px ) {
+    .poster-contents,
+    .poster-sidebar,
+    .section {
+        width: unset;
+    }
+    .poster-main {
+        display: block;
+    }
+}
+
+@media ( max-height: 800px ) {
+    *::before {
+        content: '그만해~ 높이가 넘 낮아!~~~';
+    }
+}

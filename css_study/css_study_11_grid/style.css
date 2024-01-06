@@ -1,0 +1,112 @@
+/* CSS Resets */
+ul {
+	margin: unset;
+	padding: unset;
+	list-style-type: none;
+}
+
+h2 {
+	margin: unset;
+	font-size: unset;
+	font-weight: unset;
+}
+
+a {
+	color: unset;
+	text-decoration: unset;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: top;
+}
+
+/* Typography */
+:root {
+	font-family: 'Work Sans';
+}
+
+/* Layouts */
+.l_wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* Components */
+body {
+	background-color: #222;
+}
+
+.section {
+	padding: 20px 0;
+}
+
+.grid {
+	background-color: #222;
+	aspect-ratio: 1/1;
+	font-size: 30px;
+	color: #999;
+	display: grid;
+	padding: 20px;
+	gap: 20px;
+	grid-template-columns: repeat( 4, 1fr );
+	grid-template-rows: repeat( 4, 1fr );
+}
+
+.grid-item {
+	position: relative;
+}
+
+.grid-item:nth-child(1) {
+	grid-column-start: 1;	
+	grid-column-end: span 2;
+	grid-row-start: 1;	
+	grid-row-end: span 2;
+}
+
+.grid-item:nth-child(5) {
+	grid-column-start: 4;
+	grid-row-start: 2;
+	grid-row-end: span 3;
+}
+
+.grid-item:nth-child(9) {
+	grid-column-start: 1;	
+	grid-column-end: span 2;
+}
+
+.item {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	transition: all .2s;
+	border: 0 solid white;
+	border-radius: 20px;
+	overflow: hidden;
+	padding: 20px;
+}
+
+.item:hover {
+	z-index: 10;
+	border-width: 10px;
+	margin: -30px;
+	color: white;
+	/* 또는 inset: -30px */
+}
+
+.item::before {
+	content: ' ';
+	position: absolute;
+	inset: 0;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); 
+	z-index: -1;
+}
+
+.item-bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	max-width: unset; 
+	z-index: -2;
+}
