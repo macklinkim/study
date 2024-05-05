@@ -68,8 +68,6 @@ body {
   background: white;
   width: 800px;
   margin: 60px auto;
-  border-radius: 2rem;
-  overflow: hidden;
 }
 
 .header {
@@ -128,7 +126,7 @@ p {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right 20px center;
-  transition: all .15s;
+  transition: all .3s;
 }
 
 .skills:hover {
