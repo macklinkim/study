@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="script.js" async></script>
+    <title>로그인하기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cover">
+      <img class="cover-src" src="images/cover.png" alt="" />
+    </div>
+    <main class="main">
+      <div class="main-inside">
+        <form action="">
+          <fieldset>
+            <legend class="form-title">이메일로 로그인하기</legend>
+            <div class="form-field">
+              <label class="form-label" for="username">이메일 주소</label>
+              <div class="form-input">
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="잘 입력"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="password">비밀번호</label>
+              <div class="form-input">
+                <input type="password" id="password" required />
+              </div>
+            </div>
+            <button class="button type_block">로그인하기</button>
+          </fieldset>
+        </form>
+        <div class="split">
+          또는 소셜로그인
+        </div>
+        <a href="" class="socialButton type_google">
+          <span>
+            <strong>구글</strong>로 로그인
+          </span>
+        </a>
+        <a href="" class="socialButton type_facebook">
+          <strong>페이스북</strong>으로 로그인
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

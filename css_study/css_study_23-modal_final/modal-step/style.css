@@ -1,0 +1,103 @@
+body {
+	overflow-y: scroll;
+}
+
+/* body인데 하위 요소에 .modal.is_active가 있는 body */
+body:has(.modal.is_active) {
+	/* 스크롤바 없애기 */
+	overflow: hidden;
+}
+
+.button {
+	font-size: 48px;
+	margin: 8px;
+}
+
+.modal {
+	background-color: rgb( 0 0 0 / .8 );
+	position: fixed;
+
+	/* 가득 채우기 */
+	inset: 0;
+
+	padding: 60px 60px 60px 80px; /* 좌측에 스크롤바 너비 더함 */
+	display: flex;
+	flex-direction: column;
+
+	overflow-y: scroll;
+	opacity: 0;
+
+	/* 마우스 이벤트 무용지물 */
+	pointer-events: none;
+
+	transition: opacity .4s;
+}
+
+.modal::-webkit-scrollbar {
+	width: 20px;
+	height: 20px;
+}
+
+/* 스크롤 활성화시 보여지게 */
+.modal::-webkit-scrollbar-track:enabled {
+	background-color: orange;
+}
+
+.modal::-webkit-scrollbar-thumb:enabled {
+	background-color: orangered;
+}
+
+.modal.is_active {
+	opacity: 1;
+	/* 모달이 떴을때 마우스 이벤트 먹을 수 있도록 */
+	pointer-events: unset;
+}
+
+.modal-inside {
+	width: 100%;
+	max-width: 640px;
+	margin: auto;
+	opacity: 0;
+	transform: translateY(-50%);
+	transition: all .4s;
+	transition-delay: .4s;
+}
+
+/* type_scroll에 붙게되면 달라지는 컨셉 */
+.modal.type_scroll .modal-inside {
+	flex-grow: 1;
+	max-height: 600px;
+	min-height: 0;
+}
+
+.modal.is_active .modal-inside {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.window {
+	background-color: white;
+	color: #333;
+	padding: 12px;
+	height: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+
+.window-header {
+	background-color: #D1EBDA;
+	padding: 12px;
+}
+
+.window-main {
+	padding: 20px 12px;
+	flex-grow: 1;
+	overflow: auto;
+	overscroll-behavior: none;
+}
+
+.window-footer {
+	background-color: #EEEEEE;
+	padding: 12px;
+}
